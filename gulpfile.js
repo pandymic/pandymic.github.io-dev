@@ -8,9 +8,9 @@ const gulp = require( 'gulp' ),
 gulp.task( 'dist', () => {
   return gulp.src( [
     './src/**/*',
-    '!./src/html/sync',
-    '!./src/html/script.js',
-    '!./src/html/style.scss',
+    '!./src/docs/sync',
+    '!./src/docs/script.js',
+    '!./src/docs/style.scss',
     '!./src/**/*.md',
     '!./src/**/.gitignore'
   ] )
@@ -18,7 +18,7 @@ gulp.task( 'dist', () => {
 } );
 
 gulp.task( 'style', () => {
-  return gulp.src( './src/html/style.scss' )
+  return gulp.src( './src/docs/style.scss' )
     .pipe( plumber() )
     .pipe( sass( {
       outputStyle: 'compressed',
@@ -30,14 +30,14 @@ gulp.task( 'style', () => {
         }
       }
     } ) )
-    .pipe( gulp.dest( './dist/html' ) );
+    .pipe( gulp.dest( './dist/docs' ) );
 });
 
 gulp.task( 'script', () => {
-  return gulp.src( './src/html/script.js' )
+  return gulp.src( './src/docs/script.js' )
     .pipe( plumber() )
     .pipe( uglify() )
-    .pipe( gulp.dest( './dist/html' ) );
+    .pipe( gulp.dest( './dist/docs' ) );
 });
 
 gulp.task( 'watch', () => {

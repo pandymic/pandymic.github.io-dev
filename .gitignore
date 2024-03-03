@@ -1,14 +1,7 @@
 /*
 !/.gitignore
-!/composer.json
-!/dist/
-/dist/*
-!/etc
-/etc/*
 !/gulpfile.js
 !/lib
-/node_modules/
 !/package.json
 !/readme.md
 !/src
-/vendor/
