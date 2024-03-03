@@ -1,0 +1,22 @@
+{
+  "name": "pandymic-github-io",
+  "version": "1.0.0",
+  "description": "Just a slightly more complex GitHub pages repo.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pandymic/html-sync.git"
+  },
+  "author": "Michal Pandyra <mike@pandymic.com>",
+  "bugs": {
+    "url": "https://github.com/pandymic/html-sync/issues"
+  },
+  "homepage": "https://github.com/pandymic/html-sync#readme",
+  "devDependencies": {
+    "fancy-log": "^2.0.0",
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.71.1"
+  }
+}
