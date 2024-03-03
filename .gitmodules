@@ -1,0 +1,4 @@
+[submodule "pandymic/pandymic.github.io"]
+   path = dist
+   url = git@github.com:pandymic/pandymic.github.io.git
+   ignore = all
