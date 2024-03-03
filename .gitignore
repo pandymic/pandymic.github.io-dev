@@ -1,5 +1,6 @@
 /*
 !/.gitignore
+/dist
 !/gulpfile.js
 !/lib
 !/package.json
