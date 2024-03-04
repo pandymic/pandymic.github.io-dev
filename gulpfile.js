@@ -26,6 +26,7 @@ gulp.task( 'handlebars', () => {
       batch : [ './src/partials' ]
     } ) )
     .pipe( rename( function( path ) {
+      console.log( 'path', path );
       path.extname = ".html"
     } ) )
     .pipe( gulp.dest( './dist/docs' ) );
@@ -34,6 +35,8 @@ gulp.task( 'handlebars', () => {
 gulp.task( 'dist', () => {
   return gulp.src( [
     './src/**/*',
+    '!./src/partials',
+    '!./src/partials/**/*',
     '!./src/docs/script.js',
     '!./src/docs/style.scss',
     '!./src/docs/**/*.handlebars'
