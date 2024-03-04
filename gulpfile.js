@@ -8,29 +8,32 @@ const gulp = require( 'gulp' ),
   shell = require( 'child_process' ).exec,
   uglify = require( 'gulp-uglify' );
 
-  gulp.task( 'markdown', () => {
-    return gulp.src(  './src/markdown/*.md'  )
-      .pipe( markdown() )
-      .pipe( rename( function( path ) {
-        path.extname = ".handlebars"
-      } ) )
-      .pipe( gulp.dest( './src/partials' ) );
-  } );
+gulp.task( 'markdown', () => {
+  return gulp.src(  './src/markdown/*.md'  )
+    .pipe( markdown( {
+      html: true,
+      linkify: true
+    } ) )
+    .pipe( rename( function( path ) {
+      path.extname = ".handlebars"
+    } ) )
+    .pipe( gulp.dest( './src/partials' ) );
+} );
 
-  gulp.task( 'handlebars', () => {
-    return gulp.src(  './src/docs/**/*.handlebars'  )
-      .pipe( handlebars( {}, {
-        batch : [ './src/partials' ]
-      } ) )
-      .pipe( rename( function( path ) {
-        path.extname = ".html"
-      } ) )
-      .pipe( gulp.dest( './dist' ) );
-  } );
+gulp.task( 'handlebars', () => {
+  return gulp.src(  './src/docs/**/*.handlebars'  )
+    .pipe( handlebars( {}, {
+      batch : [ './src/partials' ]
+    } ) )
+    .pipe( rename( function( path ) {
+      path.extname = ".html"
+    } ) )
+    .pipe( gulp.dest( './dist/docs' ) );
+} );
 
 gulp.task( 'dist', () => {
   return gulp.src( [
-    './src/docs/**/*',
+    './src/**/*',
     '!./src/docs/script.js',
     '!./src/docs/style.scss',
     '!./src/docs/**/*.handlebars'
@@ -65,4 +68,4 @@ gulp.task( 'watch', () => {
   gulp.watch( './src/**/*', gulp.series( 'default' ) );
 } );
 
-gulp.task( 'default', gulp.series( 'dist', 'style', 'script' ) );
+gulp.task( 'default', gulp.series( 'markdown', 'handlebars', 'dist', 'style', 'script' ) );
