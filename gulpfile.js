@@ -1,4 +1,5 @@
 const gulp = require( 'gulp' ),
+  data = require( 'gulp-data' ),
   handlebars = require( 'gulp-compile-handlebars' ),
   log = require( 'fancy-log' ),
   markdown = require( 'gulp-markdown-it' ),
@@ -22,6 +23,9 @@ gulp.task( 'markdown', () => {
 
 gulp.task( 'handlebars', () => {
   return gulp.src(  './src/docs/**/*.handlebars'  )
+    .pipe( data( file => {
+      return { baseUrl: './' + file.relative.substring( 0, file.relative.length - file.basename.length ) };
+    } ) )
     .pipe( handlebars( {}, {
       batch : [ './src/partials' ]
     } ) )
