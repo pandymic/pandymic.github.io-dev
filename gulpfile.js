@@ -24,7 +24,10 @@ gulp.task( 'markdown', () => {
 gulp.task( 'handlebars', () => {
   return gulp.src(  './src/docs/**/*.handlebars'  )
     .pipe( data( file => {
-      return { baseUrl: './' + file.relative.substring( 0, file.relative.length - file.basename.length ) };
+      return { 
+        baseUrl: './' + file.relative.substring( 0, file.relative.length - file.basename.length ),
+        baseRelative: '../'.repeat( file.relative.split( '/' ).length - 1 )
+      };
     } ) )
     .pipe( handlebars( {}, {
       batch : [ './src/partials' ]
