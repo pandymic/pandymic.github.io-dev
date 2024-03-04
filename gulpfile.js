@@ -1,18 +1,39 @@
 const gulp = require( 'gulp' ),
+  handlebars = require( 'gulp-compile-handlebars' ),
   log = require( 'fancy-log' ),
-  plumber = require('gulp-plumber'),
-  sass = require('gulp-sass')( require('sass') ),
+  markdown = require( 'gulp-markdown-it' ),
+  plumber = require( 'gulp-plumber' ),
+  rename = require( 'gulp-rename' ),
+  sass = require( 'gulp-sass' )( require( 'sass' ) ),
   shell = require( 'child_process' ).exec,
-  uglify = require('gulp-uglify');
+  uglify = require( 'gulp-uglify' );
+
+  gulp.task( 'markdown', () => {
+    return gulp.src(  './src/markdown/*.md'  )
+      .pipe( markdown() )
+      .pipe( rename( function( path ) {
+        path.extname = ".handlebars"
+      } ) )
+      .pipe( gulp.dest( './src/partials' ) );
+  } );
+
+  gulp.task( 'handlebars', () => {
+    return gulp.src(  './src/docs/**/*.handlebars'  )
+      .pipe( handlebars( {}, {
+        batch : [ './src/partials' ]
+      } ) )
+      .pipe( rename( function( path ) {
+        path.extname = ".html"
+      } ) )
+      .pipe( gulp.dest( './dist' ) );
+  } );
 
 gulp.task( 'dist', () => {
   return gulp.src( [
-    './src/**/*',
-    '!./src/docs/sync',
+    './src/docs/**/*',
     '!./src/docs/script.js',
     '!./src/docs/style.scss',
-    '!./src/**/*.md',
-    '!./src/**/.gitignore'
+    '!./src/docs/**/*.handlebars'
   ] )
     .pipe( gulp.dest( './dist' ) );
 } );
