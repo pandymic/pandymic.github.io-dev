@@ -26,7 +26,6 @@ gulp.task( 'handlebars', () => {
       batch : [ './src/partials' ]
     } ) )
     .pipe( rename( function( path ) {
-      console.log( 'path', path );
       path.extname = ".html"
     } ) )
     .pipe( gulp.dest( './dist/docs' ) );
