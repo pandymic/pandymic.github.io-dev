@@ -26,7 +26,8 @@ gulp.task( 'handlebars', () => {
     .pipe( data( file => {
       return { 
         baseUrl: './' + file.relative.substring( 0, file.relative.length - file.basename.length ),
-        baseRelative: '../'.repeat( file.relative.split( '/' ).length - 1 )
+        baseRelative: '../'.repeat( file.relative.split( '/' ).length - 1 ),
+        version: Date.now()
       };
     } ) )
     .pipe( handlebars( {}, {
@@ -54,7 +55,7 @@ gulp.task( 'style', () => {
   return gulp.src( './src/docs/style.scss' )
     .pipe( plumber() )
     .pipe( sass( {
-      outputStyle: 'compressed',
+      style: 'compressed',
       loadPaths: [ '.' ],
       functions: {
         // Base64 encode strings for data url's within sass files.
