@@ -1,14 +1,18 @@
 {{> header}}
 
-<p class="back"><a href="{{baseRelative}}">← Back</a></p>
+<header class="site-header">
+<p class="eyebrow"><a href="{{baseRelative}}">← pandymic.github.io</a></p>
+<h1>Tech notes</h1>
+<p class="lead">A few general-purpose reminders from the world of computing, written by hand and framed the same way as the home page.</p>
+</header>
 
 <main>
 <section>
-<h1>🖥 Tech Notes <code>html</code></h1>
+<h2>🖥 Tech Notes <code>html</code></h2>
 <p>A few general-purpose reminders from the world of computing.</p>
-<h2>Static sites</h2>
+<h3>Static sites</h3>
 <p>A static site is just files: HTML, CSS, JavaScript and assets. With no server-side code to run, hosting is cheap, fast and hard to break. Build once, serve anywhere.</p>
-<h2>Build pipelines</h2>
+<h3>Build pipelines</h3>
 <ul>
 <li>Keep sources and generated output separate.</li>
 <li>Make builds repeatable: pin versions and lock dependencies.</li>
@@ -17,16 +21,16 @@
 </section>
 
 <section>
-<h1>🖥 Shell Basics <code>html</code></h1>
+<h2>🖥 Shell Basics <code>html</code></h2>
 <p>Handy commands worth knowing by heart:</p>
 <pre><code>ls -la          # list files, including hidden
 grep -rn foo .  # search recursively
 git log --oneline
 curl -I https://example.com
 node --version</code></pre>
-<h2>Versioning</h2>
+<h3>Versioning</h3>
 <p>Semantic versioning uses <code>MAJOR.MINOR.PATCH</code>: breaking changes, new features, then fixes.</p>
-<h2>Further reading</h2>
+<h3>Further reading</h3>
 <ul>
 <li><a href="https://developer.mozilla.org/">MDN Web Docs</a></li>
 <li><a href="https://nodejs.org/">Node.js</a></li>

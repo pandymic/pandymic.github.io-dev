@@ -1,4 +1,4 @@
-# Welcome! `markdown`
+## Welcome! `markdown`
 
 Hello, World! This column is written in Markdown, compiled to a Handlebars partial, and dropped into the page.
 
