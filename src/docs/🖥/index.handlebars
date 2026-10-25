@@ -1,5 +1,38 @@
 {{> header}}
 
-<h1>Lorem Ipsum <code>html</code></h1>
+<p class="back"><a href="{{baseRelative}}">← Back</a></p>
+
+<main>
+<section>
+<h1>🖥 Tech Notes <code>html</code></h1>
+<p>A few general-purpose reminders from the world of computing.</p>
+<h2>Static sites</h2>
+<p>A static site is just files: HTML, CSS, JavaScript and assets. With no server-side code to run, hosting is cheap, fast and hard to break. Build once, serve anywhere.</p>
+<h2>Build pipelines</h2>
+<ul>
+<li>Keep sources and generated output separate.</li>
+<li>Make builds repeatable: pin versions and lock dependencies.</li>
+<li>Automate the boring parts: compile, minify, deploy.</li>
+</ul>
+</section>
+
+<section>
+<h1>🖥 Shell Basics <code>html</code></h1>
+<p>Handy commands worth knowing by heart:</p>
+<pre><code>ls -la          # list files, including hidden
+grep -rn foo .  # search recursively
+git log --oneline
+curl -I https://example.com
+node --version</code></pre>
+<h2>Versioning</h2>
+<p>Semantic versioning uses <code>MAJOR.MINOR.PATCH</code>: breaking changes, new features, then fixes.</p>
+<h2>Further reading</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/">MDN Web Docs</a></li>
+<li><a href="https://nodejs.org/">Node.js</a></li>
+<li><a href="https://pages.github.com/">GitHub Pages</a></li>
+</ul>
+</section>
+</main>
 
 {{> footer}}
