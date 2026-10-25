@@ -1,14 +1,16 @@
 {{> header}}
 
-<header class="site-header">
-<p class="eyebrow"><a href="{{baseRelative}}">← pandymic.github.io</a></p>
-<h1>Tech notes</h1>
-<p class="lead">A few general-purpose reminders from the world of computing, written by hand and framed the same way as the home page.</p>
-</header>
 
 <main>
-<section>
-<h2>🖥 Tech Notes <code>html</code></h2>
+<div class="flow">
+<p class="eyebrow">Tech notes</p>
+<h1>Bits, bytes and build steps.</h1>
+<p class="lead">A few general-purpose reminders from the world of computing, written by hand and framed the same way as the home page.</p>
+</div>
+
+<div class="grid">
+<section class="card">
+<h2>Static sites and pipelines <code>html</code></h2>
 <p>A few general-purpose reminders from the world of computing.</p>
 <h3>Static sites</h3>
 <p>A static site is just files: HTML, CSS, JavaScript and assets. With no server-side code to run, hosting is cheap, fast and hard to break. Build once, serve anywhere.</p>
@@ -20,8 +22,8 @@
 </ul>
 </section>
 
-<section>
-<h2>🖥 Shell Basics <code>html</code></h2>
+<section class="card">
+<h2>Shell and versioning <code>html</code></h2>
 <p>Handy commands worth knowing by heart:</p>
 <pre><code>ls -la          # list files, including hidden
 grep -rn foo .  # search recursively
@@ -37,6 +39,7 @@ node --version</code></pre>
 <li><a href="https://pages.github.com/">GitHub Pages</a></li>
 </ul>
 </section>
+</div>
 </main>
 
 {{> footer}}

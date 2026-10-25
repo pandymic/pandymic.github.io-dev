@@ -1,13 +1,15 @@
 {{> header}}
 
-<header class="site-header">
-<p class="eyebrow">pandymic.github.io</p>
-<h1>Source in, site out.</h1>
-<p class="lead">A tiny demo of the build-deploy pipeline behind my sites: write once as HTML or Markdown, compile with Gulp, and publish to GitHub Pages. The same content is rendered both ways below, side by side.</p>
-</header>
 
 <main>
-<section>
+<div class="flow">
+<p class="eyebrow">Hello, World</p>
+<h1>Source in, site out.</h1>
+<p class="lead">A tiny demo of the build-deploy pipeline behind my sites: write once as HTML or Markdown, compile with Gulp, and publish to GitHub Pages. The same content is rendered both ways below, side by side.</p>
+</div>
+
+<div class="grid">
+<section class="card">
 <h2>Welcome! <code>html</code></h2>
 <p>Hello, World! This column is written in plain HTML, right in the Handlebars template.</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -23,9 +25,10 @@
 </ul>
 </section>
 
-<section>
+<section class="card">
 {{> welcome}}
 </section>
+</div>
 </main>
 
 {{> footer}}
