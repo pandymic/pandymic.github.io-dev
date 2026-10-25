@@ -55,6 +55,7 @@ gulp.task( 'style', () => {
     .pipe( plumber() )
     .pipe( sass( {
       outputStyle: 'compressed',
+      loadPaths: [ '.' ],
       functions: {
         // Base64 encode strings for data url's within sass files.
         'pandymic-libsass-btoa($string)': function(string) {
